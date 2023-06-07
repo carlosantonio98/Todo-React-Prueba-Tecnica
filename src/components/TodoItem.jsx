@@ -7,6 +7,7 @@ export const TodoItem = ({ task }) => {
     const { onDeleteTodo, onToggleTodo } = useContext( TodoContext );
 
     const onDelete = ( id ) => {
+        if (!window.confirm('¿Estas seguro de querer eliminar la tarea?')) return;
         onDeleteTodo( id );
     }
 
